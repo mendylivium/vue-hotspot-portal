@@ -30,7 +30,7 @@ ratesRaw.forEach(rate => {
                             </div>
                             <div class="card-body">
                                 <p>Enter Voucher Code Here</p>
-                                <form :action="$route.query.target ?? '/'">
+                                <form :action="'//' + $route.query.target ?? '/'" method="POST">
                                     <input class="form-control-md mr-t-10 plch-center" id="vouchie" name="username"
                                         type="text" placeholder="Voucher" />
                                     <div style="display:none"><input type="text" id="cid" name="clientMac" />
@@ -56,7 +56,7 @@ ratesRaw.forEach(rate => {
                                             <h3>TIME</h3>
                                         </th>
                                     </tr>
-                                    <tr v-for="rates in rate">
+                                    <tr v-for="rate in rates">
                                         <td>
                                             ₱ {{ rate.price }}
                                         </td>
